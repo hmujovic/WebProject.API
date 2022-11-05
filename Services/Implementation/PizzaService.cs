@@ -45,7 +45,11 @@ namespace WebProjectV1.Services.Implementation
             var pizza = pizzaCreateDto.Adapt<Pizza>();
             _repositoryManager.PizzaRepository.CreatePizza(pizza);
             var result = await _repositoryManager.UnitOfWork.SaveChangesAsync();
-            if (result != 0) return _response;
+            if (result != 0) 
+            {
+                _response.Message = "Successfuly created pizza";
+                return _response;
+            }
             _response.Success = false;
             _response.Message = "Error Creating Pizza";
             return _response;
