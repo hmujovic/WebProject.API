@@ -1,4 +1,4 @@
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using WebProject.API.Data;
 using WebProject.API.Domain.Models;
 
